@@ -3,7 +3,7 @@ import axios from 'axios';
 export const uploadImage = async (file) => {
   try {
     // Get the upload URL from the backend using the environment variable
-    const response = await axios.get(`${process.env.VITE_SERVER_DOMAIN}/generate-upload-url`);
+    const response = await axios.get(import.meta.env.VITE_SERVER_DOMAIN+ "/generate-upload-url");
     const uploadUrl = response.data.uploadUrl;
 
     if (!uploadUrl) {
